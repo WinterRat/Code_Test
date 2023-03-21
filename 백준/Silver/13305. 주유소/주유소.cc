@@ -19,7 +19,7 @@ int main()
         cin>>dist[i]; 
     }
     for(int j=0; j<n; j++){ 
-        cin>>cost[j]; 
+        cin>>cost[j];
     }
     long long now=cost[0];
     long long tot_c=0;
