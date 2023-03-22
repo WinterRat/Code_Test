@@ -1,24 +1,28 @@
-#include <stdio.h>
-#include <vector>
+#include <iostream>
+#include <stack>
 using namespace std;
+
 int main()
 {
-    int n, max, now=0;
-    int count = 1;
-    scanf("%d",&n);
-    vector <int> v(n);
-    for(int i=0; i<n; i++){
-        scanf("%d",&v[i]);     
-    }
-    max = v[n-1];
-    for(int i=0; i<n; i++){
-        now = v.back();
-        v.pop_back();
-        if(max<now){
-            max = now;
-            count ++;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int N;
+    cin>>N;
+
+    stack<int> s;
+    int max = 0;
+
+    for (int i = 0; i < N; i++) {
+        int h;
+        cin>>h;
+
+        while (!s.empty() && s.top() <= h) {
+            s.pop();
         }
+        s.push(h);
     }
-    printf("%d\n",count);
+    cout<<s.size()<<'\n';
     return 0;
 }
