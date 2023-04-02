@@ -1,6 +1,8 @@
 from sys import stdin
 from collections import deque
 
+input = stdin.readline
+
 def dfs(tree, start_node):
     visited = [False] * len(tree)
     dist = [0] * len(tree)
@@ -23,7 +25,7 @@ def main():
     for i in range(1,V+1) :
         input_list = list(map(int, input().split())) # 0부터임
         l = (len(input_list)-2) // 2 # 1 1 2 3 1
-        if(l==1) : # 출발점이 안정해져서 연결 노드가 1인 제일 먼 애들 후보로 저장해놓기
+        if(l==1) : # 출발점이 안정해져서 연결 노드가 1인 제일 먼 애 하나 후보로 저장해놓기
             start_hubo = i
             
         for idx in range(l): # 0 1 > 1 3 2 4
